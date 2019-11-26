@@ -3,8 +3,10 @@ Android app with multi tools
 
 
 ## Features
-Hydration reminder\n
-Calculators\n
+Hydration reminder
+
+Calculators
+
 Todo & Reminders - Using raspberry pi as a server
 Stream music from youtube
 Track your happiness level - manual input
