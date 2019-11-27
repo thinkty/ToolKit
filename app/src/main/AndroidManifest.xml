@@ -9,7 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".HappinessActivity"
+            android:theme="@style/AppNoActionBar"></activity>
+        <activity
+            android:name=".MusicActivity"
+            android:theme="@style/AppNoActionBar"/>
+        <activity
+            android:name=".HydroActivity"
+            android:theme="@style/AppNoActionBar"/>
+        <activity
+            android:name=".TodoActivity"
+            android:theme="@style/AppNoActionBar"/>
+        <activity
+            android:name=".AlarmActivity"
+            android:theme="@style/AppNoActionBar"/>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

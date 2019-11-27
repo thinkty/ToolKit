@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ToolKit</string>
+    <string name="hydro">Hydro</string>
+    <string name="todo">todo</string>
+    <string name="music">music</string>
+    <string name="happy">Happy</string>
+    <string name="alarm">alarm</string>
 </resources>
