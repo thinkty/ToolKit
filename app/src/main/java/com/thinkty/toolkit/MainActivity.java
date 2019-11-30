@@ -4,16 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.TextClock;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextClock clock;
     private Button hydroButton;
     private Button todoButton;
     private Button musicButton;
@@ -26,11 +27,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Stop the ringtone
+        if (AlarmReceiver.getRingtone() != null && AlarmReceiver.getRingtone().isPlaying()) {
+            AlarmReceiver.getRingtone().stop();
+        }
+
+        clock = (TextClock) findViewById(R.id.clock);
         hydroButton = (Button) findViewById(R.id.hydroButton);
         todoButton = (Button) findViewById(R.id.todoButton);
         musicButton = (Button) findViewById(R.id.musicButton);
         happyButton = (Button) findViewById(R.id.happinessButton);
         alarmButton = (Button) findViewById(R.id.alarmButton);
+
+        // Set clock
+        clock.setFormat24Hour(android.text.format.DateFormat.getDateFormat(getApplicationContext()).toString());
 
         // Setting onClickListeners for buttons
         hydroButton.setOnTouchListener(onTouchListenerForButtons);
@@ -82,26 +92,31 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = null;
                     switch (v.getId()) {
                         case R.id.hydroButton:
+                            Log.d("MainActivity", "Hydro button clicked");
                             hydroButton.setBackground(ContextCompat.getDrawable(v.getContext(), R.drawable.button_box_border_left));
                             intent = new Intent(v.getContext(), HydroActivity.class);
                             break;
 
                         case R.id.todoButton:
+                            Log.d("MainActivity", "Todo button clicked");
                             todoButton.setBackground(ContextCompat.getDrawable(v.getContext(), R.drawable.button_box_border_right));
                             intent = new Intent(v.getContext(), TodoActivity.class);
                             break;
 
                         case R.id.musicButton:
+                            Log.d("MainActivity", "Music button clicked");
                             musicButton.setBackground(ContextCompat.getDrawable(v.getContext(), R.drawable.button_box_border_left));
                             intent = new Intent(v.getContext(), MusicActivity.class);
                             break;
 
                         case R.id.happinessButton:
+                            Log.d("MainActivity", "Happy button clicked");
                             happyButton.setBackground(ContextCompat.getDrawable(v.getContext(), R.drawable.button_box_border_right));
                             intent = new Intent(v.getContext(), HappinessActivity.class);
                             break;
 
                         case R.id.alarmButton:
+                            Log.d("MainActivity", "Alarm button clicked");
                             alarmButton.setBackground(ContextCompat.getDrawable(v.getContext(), R.drawable.button_box_border_left));
                             intent = new Intent(v.getContext(), AlarmActivity.class);
                             break;
@@ -119,4 +134,14 @@ public class MainActivity extends AppCompatActivity {
             return result;
         }
     };
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Stop the ringtone
+        if (AlarmReceiver.getRingtone() != null && AlarmReceiver.getRingtone().isPlaying()) {
+            AlarmReceiver.getRingtone().stop();
+        }
+    }
 }

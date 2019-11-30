@@ -4,6 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/black_background"
     tools:context=".AlarmActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TimePicker
+                android:id="@+id/alarmTimePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ToggleButton
+                android:id="@+id/alarmToggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="80dp"
+                android:background="@drawable/alarm_toggle_background_off"
+                android:textColor="#FFFFFF"
+                android:textOff=""
+                android:textOn="" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

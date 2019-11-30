@@ -10,7 +10,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical" >
+
+        <TextClock
+            android:id="@+id/clock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:fontFamily="monospace"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:textStyle="normal"
+            tools:visibility="visible" />
 
         <Button
             android:id="@+id/hydroButton"
@@ -21,7 +33,7 @@
             android:paddingEnd="25dp"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="30dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="100dp"
             android:text="@string/hydro"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
@@ -34,15 +46,16 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:src="@drawable/main_activity_button_divider"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/divider" />
 
         <Button
             android:id="@+id/todoButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:paddingStart="38dp"
-            android:paddingEnd="60dp"
+            android:paddingStart="25dp"
+            android:paddingEnd="73dp"
             android:background="@drawable/button_box_border_right"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="50dp"
@@ -58,7 +71,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:src="@drawable/main_activity_button_divider"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/divider" />
 
         <Button
             android:id="@+id/musicButton"
@@ -83,14 +97,15 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:src="@drawable/main_activity_button_divider"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/divider" />
 
         <Button
             android:id="@+id/happinessButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:paddingStart="28dp"
+            android:paddingStart="25dp"
             android:paddingEnd="60dp"
             android:background="@drawable/button_box_border_right"
             android:layout_marginStart="30dp"
@@ -109,7 +124,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:src="@drawable/main_activity_button_divider"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/divider" />
 
         <Button
             android:id="@+id/alarmButton"
